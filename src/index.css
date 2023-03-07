@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@100;200;400;600;700&family=Nanum+Brush+Script&family=Poppins&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-main-bg;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.heading-1 {
+    @apply text-4xl font-bold leading-tight md:text-5xl lg:text-6xl sm:leading-none sm:mb-4 text-[#121914];
+}
+.heading-2 {
+    @apply text-3xl font-bold leading-tight md:text-4xl lg:text-5xl sm:leading-none sm:mb-4;
+}
+.heading-3 {
+    @apply text-2xl font-bold leading-tight md:text-3xl lg:text-4xl sm:leading-none sm:mb-4;
+}
+.heading-4 {
+    @apply text-xl font-bold leading-tight md:text-2xl lg:text-3xl sm:leading-none sm:mb-4;
+}
+.heading-5 {
+    @apply text-lg font-bold leading-tight md:text-xl lg:text-2xl sm:leading-none sm:mb-4;
+}
+.heading-6 {
+    @apply text-base font-bold leading-tight md:text-lg lg:text-xl sm:leading-none sm:mb-4;
+}
+
+.section-spacing {
+    @apply p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20;
+}
+
+.dashboard-layout {
+    display: grid;
+  
+    grid-template-areas:
+      "header header"
+      "nav content"
+      ;
+  
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+.dashboard-header {
+    grid-area: header;
+}
+
+.dashboard-nav {
+    grid-area: nav;
+}
+
+.dashboard-main {
+    grid-area: content;
+    margin-inline: 2rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-areas:
+        "header"
+        "nav"
+        "content";
+
+        grid-template-columns: 1fr;
+        grid-template-rows:
+        auto /* Header */
+        minmax(75px, auto) /* Nav */
+        1fr /* Content */
+        minmax(75px, auto) /* Sidebar */
+        auto; /* Footer */
+    }
+
+}
+
+
+.me {
+    background: radial-gradient(circle at 50% 100%, #E6F6ED80 5%, #E6F6ED 5% 10%, #E6F6ED80 10% 15%, #E6F6ED 15% 20%, #E6F6ED80 20% 25%, #E6F6ED 25% 30%, #E6F6ED80 30% 35%, #E6F6ED 35% 40%, transparent 40%), radial-gradient(circle at 100% 50%, #E6F6ED80 5%, #E6F6ED 5% 10%, #E6F6ED80 10% 15%, #E6F6ED 15% 20%, #E6F6ED80 20% 25%, #E6F6ED 25% 30%, #E6F6ED80 30% 35%, #E6F6ED 35% 40%, transparent 40%), radial-gradient(circle at 50% 0%, #E6F6ED80 5%, #E6F6ED 5% 10%, #E6F6ED80 10% 15%, #E6F6ED 15% 20%, #E6F6ED80 20% 25%, #E6F6ED 25% 30%, #E6F6ED80 30% 35%, #E6F6ED 35% 40%, transparent 40%), radial-gradient(circle at 0 50%, #E6F6ED80 5%, #E6F6ED 5% 10%, #E6F6ED80 10% 15%, #E6F6ED 15% 20%, #E6F6ED80 20% 25%, #E6F6ED 25% 30%, #E6F6ED80 30% 35%, #E6F6ED 35% 40%, transparent 40%);
+    background-size: 3em 3em;
+    background-color: #255C3D;
+    opacity: 1
+}
