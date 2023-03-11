@@ -38,6 +38,7 @@ module.exports = {
         'error-border': '#BF5E5E',
         'affirmation-bg': '#E6F6ED',
         'gray-10': '#9B9B9B',
+        'gray-300': '#D0D5DD',
         'error': '#BF5E5E'
         
       },

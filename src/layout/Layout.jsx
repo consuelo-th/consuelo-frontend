@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import SideBar from '../components/SideBar';
 
 
-const Layout = () => {
+const Layout = ({children}) => {
     return ( 
         <div className='dashboard-layout'>
             <header className='dashboard-header fixed z-10'>
@@ -14,7 +14,8 @@ const Layout = () => {
                 <SideBar />
             </nav>
             <main className='dashboard-main mt-20 px-5'>
-                <Outlet />
+            <Outlet /> 
+            {children && <div>{children}</div>}
             </main>
         </div>
      );

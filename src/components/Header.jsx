@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Notification from "./Notification";
+import { Link } from "react-router-dom";
 
 
 export default () => {
@@ -26,13 +27,13 @@ export default () => {
                     { showNotification && <Notification /> }
                 </div>
 
-                <div className="">
+                <Link to="/me">
                     <img
                         src="https://randomuser.me/api/portraits/men/46.jpg"
                         className="rounded-full cursor-pointer"
                         width={32}
                     />
-                </div>
+                </Link>
             </div>
         </div>
     )

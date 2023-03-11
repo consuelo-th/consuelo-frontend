@@ -1,6 +1,8 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
+import Blog from './pages/Blog';
+import Blogs from './pages/AllBlogs';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import Layout from './layout/Layout';
@@ -8,8 +10,7 @@ import NoPage from './pages/NoPage';
 import SelfAffirmation from './pages/SelfAffirmation';
 import MentalHealthTips from './pages/MentalHealthTips';
 import Forum from './pages/Forum';
-import Blog from './pages/Blog';
-import Blogs from './pages/AllBlogs';
+import Profile from './pages/Profile';
 
 function App() {
   
@@ -26,7 +27,8 @@ function App() {
           <Route path="blog/:id" element={<Blog />}/>
           <Route path="community" />
         </Route>
-        <Route path="/profile"/>
+        
+        <Route path="/me" element={<Profile />}/>
         <Route path="*" element={<NoPage />} />
       </Routes>
   )
