@@ -62,6 +62,23 @@ const Profile = () => {
                             <p className='text-gray-10'>Update your photo and personal details here.</p>
 
                             <form action="/" className='mt-4 space-y-6'>
+                                <div className='flex gap-5 justify-between items-center max-w-2xl'>
+                                    <p className='w-full'>Full Name</p>
+                                    <div className='flex gap-1'>
+                                    <input
+                                        name='firstName'
+                                        id='firstName' 
+                                        placeholder='First Name'
+                                        className="focus:ring-0 border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
+                                    />
+                                    <input
+                                        name='lasttName'
+                                        id='lastName' 
+                                        placeholder='Last Name'
+                                        className=" border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
+                                    /> 
+                                    </div>
+                                </div>
                                 <Input name={'name'} type="text" label="Name" placeholder="**********" count={2}/>
                                 <Input name={'email'} type="email" label="Email" placeholder="olivia@untitledui.com"/>
                                 <Input name={'phone'} type="text" label="Phone Number" placeholder="08127878919"/>
