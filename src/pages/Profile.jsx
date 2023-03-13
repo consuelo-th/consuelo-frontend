@@ -5,7 +5,7 @@ import Layout from '../layout/Layout';
 
 const Profile = () => {
     const tabItems = ["My details", "Password"];
-    const [selectedItem, setSelectedItem] = useState(0);
+    const [selectedItem, setSelectedItem] = useState(3);
     return ( 
         <Layout>
             <div className='bg-[#F9FAFB] p-4'>
@@ -29,8 +29,6 @@ const Profile = () => {
                         ))
                     }
                 </ul>
-
-
                 {
                     tabItems[selectedItem] === 'Password' && (
                         <div className='mt-4'>
