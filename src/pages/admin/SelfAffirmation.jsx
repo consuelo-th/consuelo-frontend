@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/common.jsx/button';
+import Button from '../../components/common.jsx/button';
 
 const SelfAffirmation = () => {
     return ( 
