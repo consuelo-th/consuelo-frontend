@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Button from '../components/common.jsx/button';
-import Input from '../components/common.jsx/Input';
-import Layout from '../layout/Layout';
+import Button from '../../components/common.jsx/button';
+import Input from '../../components/common.jsx/input';
+import Layout from '../../layout/Layout';
 
 const Profile = () => {
     const tabItems = ["My details", "Password"];

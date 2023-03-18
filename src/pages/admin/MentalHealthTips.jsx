@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../components/common.jsx/button';
-import { healthTips } from '../data';
+import Button from '../../components/common.jsx/button';
+import { healthTips } from '../../data';
 
 const MentalHealthTips = () => {
     return ( 
