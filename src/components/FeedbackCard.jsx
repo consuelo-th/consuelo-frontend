@@ -2,7 +2,7 @@ import React from "react";
 
 const FeedbackCard = (image, userName, description, date) => {
   return (
-    <div className="h-[15rem]  rounded p-4 shadow-md mt-7">
+    <div className="h-[15rem]  rounded p-4 shadow-md mt-8">
       <div className="flex ">
         <div className="w-full  flex items-center gap-3 ">
           <img
