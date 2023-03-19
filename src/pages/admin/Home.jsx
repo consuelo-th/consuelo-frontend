@@ -1,7 +1,7 @@
-import { blogs } from "../data";
-import Stats from "../components/Stats";
+import { blogs } from "../../data";
+import Stats from "../../components/Stats";
 import { Link } from "react-router-dom";
-import Button from "../components/common.jsx/button";
+import Button from "../../components/common.jsx/button";
 
 export default () => {
     return (

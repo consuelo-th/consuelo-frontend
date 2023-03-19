@@ -10,7 +10,7 @@ const Button = ({ size, variant, children }) => {
     if (size === 'lg') {
         return (
             <button className={`px-24 py-2 ${light}`}>
-            {children}
+                {children}
             </button>
         )
     }
