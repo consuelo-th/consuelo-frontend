@@ -1,16 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Blog from "./pages/Blog";
-import Blogs from "./pages/AllBlogs";
-import Home from "./pages/Home";
+import Blog from "./pages/admin/Blog";
+import Blogs from "./pages/admin/AllBlogs";
+import Home from "./pages/admin/Home";
 import Landing from "./pages/Landing";
 import Layout from "./layout/Layout";
 import NoPage from "./pages/NoPage";
-import SelfAffirmation from "./pages/SelfAffirmation";
-import MentalHealthTips from "./pages/MentalHealthTips";
-import Forum from "./pages/Forum";
-import Profile from "./pages/Profile";
+import SelfAffirmation from "./pages/admin/SelfAffirmation";
+import MentalHealthTips from "./pages/admin/MentalHealthTips";
+import Forum from "./pages/admin/Forum";
+import Profile from "./pages/admin/Profile";
 import FeedbackandReviews from "./pages/FeedbackandReviews";
 
 function App() {

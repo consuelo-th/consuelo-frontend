@@ -1,5 +1,4 @@
 import React from "react";
-import FeedbackCard from "../components/FeedbackCard";
 import { FeedbackData } from "../data";
 
 const FeedBackandReviews = () => {
