@@ -11,12 +11,14 @@ import SelfAffirmation from "./pages/admin/SelfAffirmation";
 import MentalHealthTips from "./pages/admin/MentalHealthTips";
 import Forum from "./pages/admin/Forum";
 import Profile from "./pages/admin/Profile";
-import FeedbackandReviews from "./pages/FeedbackandReviews";
+import FeedbackandReviews from "./pages/admin/FeedbackandReviews";
 
 function App() {
+
   return (
     <Routes>
-      <Route path="/" element={<Landing />} />
+      <Route exact path="/" element={<Landing />} />
+
       <Route path="/dashboard" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />

@@ -1,13 +1,9 @@
-export const admin = {
-    email: "hassanted@gmail.com",
-    firstName: "Hassan",
-    lastName: "Ted",
-    isAdmin: true
-}
+import { user1, user2 } from "./auth";
 
-export const user = {
-    email: "hassanted@gmail.com",
-    firstName: "Hassan",
-    lastName: "Ted",
-    isAdmin: true
-}
+const user = user2;
+localStorage.setItem("user", JSON.stringify(user));
+console.log(JSON.parse(localStorage.getItem("user")));
+
+
+
+export default user;

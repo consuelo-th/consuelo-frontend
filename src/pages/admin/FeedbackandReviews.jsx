@@ -1,5 +1,5 @@
 import React from "react";
-import { FeedbackData } from "../data";
+import { FeedbackData } from "../../data";
 
 const FeedBackandReviews = () => {
   return (
