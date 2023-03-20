@@ -1,13 +1,13 @@
 import React from 'react';
-import Button from '../../components/common.jsx/button';
-import ForumCard from '../../components/ForumCard';
+import Button from '../components/common.jsx/button';
+import ForumCard from '../components/ForumCard';
 
 const Forum = () => {
     return ( 
         <div className='px-4 grid grid-cols-10 gap-3 relative'>
             <div className='col-span-7'>
                 <div>
-                    <h1 className='font-bold text-primary-110 mb-4'>Mental Health Tips</h1>
+                    <h1 className='font-bold text-primary-110 mb-4'>Forum</h1>
                 </div>
 
                <div className='mt-8'>
