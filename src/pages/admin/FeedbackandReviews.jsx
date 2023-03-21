@@ -1,7 +1,14 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import { FeedbackData } from "../../data";
+import user from "../../services/user";
 
 const FeedBackandReviews = () => {
+  
+  if(!user.isAdmin) {
+    return <Navigate to="/" />
+  }
+
   return (
     <div className="h-[50rem] bg-white rounded p-5">
       <h3 className=" font-semibold">Feedback & Reviews </h3>
