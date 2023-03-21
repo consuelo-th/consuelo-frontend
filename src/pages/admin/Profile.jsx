@@ -76,20 +76,20 @@ const Profile = () => {
 
                             <form action="/" className='mt-4 space-y-6'>
                                 <div className='flex gap-5 justify-between items-center max-w-3xl'>
-                                    <p className='w-full'>Full Name</p>
-                                    <div className='flex space-x-3 gap-1 '>
-                                    <input
-                                        name='firstName'
-                                        id='firstName' 
-                                        placeholder='First Name'
-                                        className="border focus:ring-0 border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
-                                    />
-                                    <input
-                                        name='lasttName'
-                                        id='lastName' 
-                                        placeholder='Last Name'
-                                        className="border border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
-                                    /> 
+                                    <p className=''>Full Name</p>
+                                    <div className='flex space-x-3 gap-1 w-[66%]'>
+                                        <input
+                                            name='firstName'
+                                            id='firstName' 
+                                            placeholder='First Name'
+                                            className="w-[48%] border focus:ring-0 border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
+                                        />
+                                        <input
+                                            name='lasttName'
+                                            id='lastName' 
+                                            placeholder='Last Name'
+                                            className="w-[48%] border border-gray-300 px-3 py-2 rounded-md outline-none focus:border-gray-300 focus:shadow-md"
+                                        /> 
                                     </div>
                                 </div>
                                 <hr className='mt-4 mb-5 border border-[#E4E7EC]' />
@@ -112,13 +112,16 @@ const Profile = () => {
                                             <img src={avi} alt="avi" />
                                         </div>
                                     </div>
-                                    <div className="flex flex-col justify-center items-center border border-gray-200 p-6 ml-5 w-[50%] bg-white">
-                                        <img src={upload} alt="avi" />
-                                        <p className=' font-medium' >
+                                    <div className="border border-gray-200 p-6 ml-5 w-[50%] bg-white">
+                                        <label htmlFor='avatar' className='flex flex-col justify-center items-center cursor-pointer'>
+                                            <input type="file" id="avatar" name="avatar" accept="image/*" className="hidden" />
+                                            <img src={upload} alt="avi" />
+                                            <p className=' font-medium' >
                                             <span className='text-primary-50 cursor-pointer hover:underline'> Click to upload </span>
                                             <span className='text-[#667085]'> or drag and drop</span>
-                                        </p>
-                                        <p className='text-sm text-[#667085]'>SVG, PNG, JPG or GIF (max. 800px)</p>
+                                            </p>
+                                            <p className='text-sm text-[#667085]'>SVG, PNG, JPG or GIF (max. 800px)</p>
+                                        </label>
                                     </div>
                                 </div>
 
