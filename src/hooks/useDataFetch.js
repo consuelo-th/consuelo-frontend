@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useState } from "react";
+import { useQuery } from "react-query";
 
 const useDataFetch = (url) => {
   const [isLoading, setIsLoading] = useState(false);
