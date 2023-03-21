@@ -1,32 +1,39 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import user from "./services/user";
 import "./App.css";
-import Blog from "./pages/admin/Blog";
-import Blogs from "./pages/admin/AllBlogs";
-import Home from "./pages/admin/Home";
-import Landing from "./pages/Landing";
-import Layout from "./layout/Layout";
-import NoPage from "./pages/NoPage";
-import SelfAffirmation from "./pages/admin/SelfAffirmation";
-import MentalHealthTips from "./pages/admin/MentalHealthTips";
-import Forum from "./pages/admin/Forum";
-import Profile from "./pages/admin/Profile";
-import FeedbackandReviews from "./pages/admin/FeedbackandReviews";
+import { 
+  Landing,
+  Layout, 
+  AdminBlog, 
+  AdminBlogs, 
+  AdminHome, 
+  Profile,
+  Forum,
+  AdminSelfAffirmation, 
+  FeedbackandReviews, 
+  AdminMentalHealthTips, 
+  BasicHome,
+  BasicBlog,
+  BasicBlogs,
+  BasicSelfAffirmation,
+  BasicMentalHealthTips,
+  NoPage
+} from "./index";
 
 function App() {
 
   return (
     <Routes>
       <Route exact path="/" element={<Landing />} />
-
       <Route path="/dashboard" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="self-affirmation" element={<SelfAffirmation />} />
-        <Route path="mental-health-tips" element={<MentalHealthTips />} />
+        <Route index element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+        <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+        <Route path="self-affirmation" element={user.isAdmin ? <AdminSelfAffirmation /> : <BasicSelfAffirmation />} />
+        <Route path="mental-health-tips" element={user.isAdmin ? <AdminMentalHealthTips /> : <BasicMentalHealthTips />} />
         <Route path="forum" element={<Forum />} />
-        <Route path="blogs" element={<Blogs />} />
-        <Route path="blog/:id" element={<Blog />} />
+        <Route path="blogs" element={user.isAdmin ? <AdminBlogs /> : <BasicBlogs />} />
+        <Route path="blog/:id" element={user.isAdmin ? <AdminBlog /> : <BasicBlog />} />
         <Route path="feedbacks" element={<FeedbackandReviews />} />
       </Route>
 
