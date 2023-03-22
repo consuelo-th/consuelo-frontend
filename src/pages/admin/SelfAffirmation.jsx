@@ -45,45 +45,67 @@ const SelfAffirmation = () => {
                 </div>
             </div>
 
-            <div className='mb-4'>
-                <h2 className='font-bold text-primary-110 mb-2'>Last week</h2>
-                <div className='flex justify-between items-center gap-2'>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div className='mb-4'>
-                <h2 className='font-bold text-primary-110 mb-2'>Last month</h2>
-                <div className='flex justify-between items-center gap-2'>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    <div className="h-full bg-affirmation-bg p-8 rounded">
-                        <p className="leading-relaxed mb-6">Synth chartreuse iPhone lomo cray raw denim brunch everyday carry neutra before they sold out fixie 90's microdosing. Tacos pinterest fanny pack venmo, post-ironic heirloom try-hard pabst authentic iceland.
-                        </p>
-                    </div>
-                    
-                </div>
-            </div>
+      <div className="mb-4">
+        <h2 className="font-bold text-primary-110 mb-2">Last week</h2>
+        <div className="flex justify-between items-center gap-2">
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
         </div>
-     );
-}
- 
+      </div>
+
+      <div className="mb-4">
+        <h2 className="font-bold text-primary-110 mb-2">Last month</h2>
+        <div className="flex justify-between items-center gap-2">
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
+          <div className="h-full bg-affirmation-bg p-8 rounded">
+            <p className="leading-relaxed mb-6">
+              Synth chartreuse iPhone lomo cray raw denim brunch everyday carry
+              neutra before they sold out fixie 90's microdosing. Tacos
+              pinterest fanny pack venmo, post-ironic heirloom try-hard pabst
+              authentic iceland.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default SelfAffirmation;

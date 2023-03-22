@@ -1,3 +1,8 @@
+import image1 from '/images/home-tip-1.png'
+import image2 from '/images/home-tip-2.png'
+import image3 from '/images/home-tip-3.png'
+import image4 from '/images/home-tip-4.png'
+
 export let navigation = [
   {
     id: 0,
@@ -192,4 +197,47 @@ export const FeedbackData = [
   },
 ];
 
+export const userHomeData = [
+  {
+    id: 1,
+    title: 'Breakups/Fallout',
+    descripton: 'Breakups and fallouts happens, what matters is how you handle these situations.',
+    image: image1
+  },
+  {
+    id: 2,
+    title: 'Self-care',
+    descripton: 'Embracing self-care and prioritising your well-being is key.',
+    image: image2
+  },
+  {
+    id: 3,
+    title: 'Stress Management',
+    descripton: 'Give yourself a break. Unwind by catching up with your friends. Create time to do the little things together.',
+    image: image3
+  },
+  {
+    id: 4,
+    title: 'Trauma',
+    descripton: 'Here’s some curated tips to help in getting you through recovery from frightening triggers and events.',
+    image: image4
+  },
+]
+
+export const userBlogHomeData = [
+  {
+    id: 1,
+    title:'A step to step guide on how to deal with anxiety',
+    length: '3 mins',
+    date: '3 November, 2022',
+    image: ''
+  },
+  {
+    id: 2,
+    title:'Learning how to take life one day at a time',
+    length: '3 mins',
+    date: '5 October, 2022',
+    image: ''
+  },
+]
 
