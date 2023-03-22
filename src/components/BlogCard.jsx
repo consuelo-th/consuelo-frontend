@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import { getOneBlog } from '../services/blog';
-import Modal from './common.jsx/modal';
 
 
 const BlogCard = ({id, title, body, image, onDelete}) => {

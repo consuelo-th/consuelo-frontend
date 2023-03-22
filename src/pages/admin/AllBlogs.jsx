@@ -2,12 +2,21 @@ import React, {useState, useEffect} from 'react';
 import BlogCard from '../../components/BlogCard'
 import Button from '../../components/common.jsx/button';
 import Spinner from '../../components/common.jsx/spinner';
+import Modal from '../../components/Modal';
+import UploadDialogue from '../../components/common.jsx/uploadDialogue';
 import { getBlogs } from '../../services/blog';
+import { useContext } from 'react';
+import { ModalContext } from '../../contexts/ModalContext';
 
 const Blogs = () => {
     const [ blogs, setBlogs ] = useState(null);
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(false);
+
+    const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
+    const handleClick = () => {
+        setIsModalOpen(!isModalOpen);   
+    }
 
     
     useEffect(() => {
@@ -43,10 +52,12 @@ const Blogs = () => {
         
     return ( 
         <div className="bg-white p-4">
-
+            <Modal>
+                <UploadDialogue title="Blog Post" placeholder="What’s going on ?" image={true}/>
+            </Modal>
             <div className='flex justify-between items-center py-4'>
                 <h1 className='font-bold text-primary-110'>Blog</h1>
-                <Button size='' variant='light'>New Post</Button>
+                <Button size='' variant='light' handleClick={() => handleClick()}>New Post</Button>
             </div>
             <div className='p-2 space-y-4'>
                 {

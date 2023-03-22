@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { getOneBlog } from '../../services/blog';
 import { useLocation } from 'react-router-dom';
 import Spinner from '../../components/common.jsx/spinner';
-import Modal from '../../components/common.jsx/modal';
 
 const Blog = () => {
     const [ blog, setBlog ] = useState(null);

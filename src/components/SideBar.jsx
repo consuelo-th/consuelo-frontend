@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import { navigation } from '../data';
 import { Link, useLocation } from 'react-router-dom';
+import { useContext } from "react";
+import { ModalContext } from '../contexts/ModalContext';
 import user from '../services/user';
 
 const SideBar = () => {
