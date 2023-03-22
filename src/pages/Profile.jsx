@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Button from '../components/common.jsx/button';
 import Input from '../components/common.jsx/input';
 import Layout from '../layout/Layout';
-import avi from '../assets/Avatar.png';
-import upload from '../assets/upload.svg'
+import avi from '../../public/images/Avatar.png';
+import upload from '../../public/images/upload.svg'
 
 const Profile = () => {
     const tabItems = ["My details", "Password"];

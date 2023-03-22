@@ -1,7 +1,7 @@
-import image1 from './assets/home-tip-1.png'
-import image2 from './assets/home-tip-2.png'
-import image3 from './assets/home-tip-3.png'
-import image4 from './assets/home-tip-4.png'
+import image1 from '../public/images/home-tip-1.png'
+import image2 from '../public/images/home-tip-2.png'
+import image3 from '../public/images/home-tip-3.png'
+import image4 from '../public/images/home-tip-4.png'
 
 export let navigation = [
   {
