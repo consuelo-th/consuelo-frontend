@@ -36,7 +36,7 @@ const SelfAffirmation = () => {
           <button className=" text-green-600 font-semibold absolute top-[13rem] mx-[13rem]">
             Save Card
           </button>
-          <img src="/images/Card.svg" alt="image" />
+          <img src="/images/SelfAffirmationCard.svg" alt="image" />
         </div>
         <img
           onClick={() =>
