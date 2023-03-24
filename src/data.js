@@ -197,6 +197,57 @@ export const FeedbackData = [
   },
 ];
 
+export const mentalHealthTips =[
+  {
+    id: 1,
+    title: 'Breakups/Fallout',
+    descripton: 'Breakups and fallouts happens, what matters is how you handle these situations.',
+    tips: {
+      tip1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+      tip2: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      tip3: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      tip4: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      tip5: " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+  },
+  {
+    id: 2,
+    title: 'Self-care',
+    descripton: "Self-care helps us to achieve this- to physically, mentally, and emotionally care for ourselves. To help you prioritise self-care, we've curated some tips in getting you to put yourself and well-being first.",
+    tips: {
+      tip1: "Set and implement healthy boundaries. Don’t hold back from saying no when you need to.",
+      tip2: "Take care of your physical health. Listen to your body signals. It really does have a lot to say if we take the time to listen.",
+      tip3: "Don’t hinge your happiness on material things or people. Be in charge of your own happiness.",
+      tip4: "Do something you enjoy every day. As little as watching a favorite TV show or listening to a favorite podcast.",
+      tip5: "Practice self-compassion. Grant yourself enough grace and understand that nobody’s perfect."
+    },
+  },
+  {
+    id: 3,
+    title: 'Stress Management',
+    descripton: 'Give yourself a break. Unwind by catching up with your friends. Create time to do the little things together.',
+    tips: {
+      tip1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+      tip2: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      tip3: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      tip4: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      tip5: " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+  },
+  {
+    id: 4,
+    title: 'Trauma',
+    descripton: 'Here’s some curated tips to help in getting you through recovery from frightening triggers and events.',
+    tips: {
+      tip1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+      tip2: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      tip3: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      tip4: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      tip5: " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    },
+  },
+]
+
 export const userHomeData = [
   {
     id: 1,
