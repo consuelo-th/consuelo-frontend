@@ -64,7 +64,7 @@ const SelfAffirmation = () => {
       <p className="text-[#595E5B] ml-4 font-semibold pt-11 pb-5">
         Saved cards
       </p>
-      <img src="/public/images/FlipCards.svg" alt="flipcards" />
+      <img src="/images/FlipCards.svg" alt="flipcards" />
     </section>
   );
 };

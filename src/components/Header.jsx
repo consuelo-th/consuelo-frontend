@@ -6,7 +6,6 @@ import user from "../services/user";
 
 export default () => {
     const [showNotification, setShowNotification] = useState(false);
-    const headerStyle = 
 
     function toggleNotification () {
         setShowNotification(!showNotification)

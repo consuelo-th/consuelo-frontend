@@ -3,7 +3,7 @@ import Button from '../../components/common.jsx/button';
 import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';
 import Modal from '../../components/Modal';
-import UploadDialogue from '../../components/common.jsx/uploadDialogue';
+import UploadDialogue from '../../components/uploadDialogue';
 import Confirm from '../../components/common.jsx/confirmationDialogue'
 
 const SelfAffirmation = () => {
