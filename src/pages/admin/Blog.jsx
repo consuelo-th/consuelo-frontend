@@ -36,7 +36,6 @@ const Blog = () => {
 
     return (
         <div>
-            <Modal type="proceed"/>
             <section className='text-center space-y-5'>
                 <div>
                     <h1 className='text-left font-bold'>{blog.title}</h1> 
