@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from '../../components/common.jsx/button';
+import Button from '../../components/common/button';
 import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';
 import Modal from '../../components/Modal';
 import UploadDialogue from '../../components/uploadDialogue';
-import Confirm from '../../components/common.jsx/confirmationDialogue'
+import Confirm from '../../components/common/confirmationDialogue'
 
 const SelfAffirmation = () => {
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext);

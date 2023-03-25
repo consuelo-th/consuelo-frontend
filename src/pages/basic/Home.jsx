@@ -2,7 +2,7 @@ import { blogs } from "../../data";
 import Stats from "../../components/Stats";
 import { Link } from "react-router-dom";
 import { userHomeData, userBlogHomeData } from "../../data";
-import Button from "../../components/common.jsx/button";
+import Button from "../../components/common/button";
 
 export default () => {
 
