@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import BlogCard from '../../components/BlogCard'
-import Button from '../../components/common.jsx/button';
-import Spinner from '../../components/common.jsx/spinner';
+import Button from '../../components/common/button';
+import Spinner from '../../components/common/spinner';
 import Modal from '../../components/Modal';
-import UploadDialogue from '../../components/common.jsx/uploadDialogue';
+import UploadDialogue from '../../components/uploadDialogue';
 import { getBlogs } from '../../services/blog';
 import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';

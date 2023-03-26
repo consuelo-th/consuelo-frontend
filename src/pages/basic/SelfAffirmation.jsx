@@ -1,18 +1,5 @@
-// import React from 'react';
-// import Button from '../../components/common.jsx/button';
-
-// const SelfAffirmation = () => {
-//     return (
-//         <div className='px-4 bg-white'>
-//             "Basic Self Affirmation"
-//         </div>
-//      );
-// }
-
-// export default SelfAffirmation;
-
 import React, { useState } from "react";
-import Button from "../../components/common.jsx/button";
+import Button from "../../components/common/button";
 
 const SelfAffirmation = () => {
   const quotes = [
@@ -64,7 +51,7 @@ const SelfAffirmation = () => {
       <p className="text-[#595E5B] ml-4 font-semibold pt-11 pb-5">
         Saved cards
       </p>
-      <img src="/public/images/FlipCards.svg" alt="flipcards" />
+      <img src="/images/FlipCards.svg" alt="flipcards" />
     </section>
   );
 };

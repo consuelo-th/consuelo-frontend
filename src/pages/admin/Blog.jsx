@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getOneBlog } from '../../services/blog';
 import { useLocation } from 'react-router-dom';
-import Spinner from '../../components/common.jsx/spinner';
+import Spinner from '../../components/common/spinner';
 
 const Blog = () => {
     const [ blog, setBlog ] = useState(null);
@@ -36,7 +36,6 @@ const Blog = () => {
 
     return (
         <div>
-            <Modal type="proceed"/>
             <section className='text-center space-y-5'>
                 <div>
                     <h1 className='text-left font-bold'>{blog.title}</h1> 

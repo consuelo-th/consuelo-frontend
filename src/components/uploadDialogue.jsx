@@ -1,6 +1,6 @@
 const UploadDialogue = ({title, placeholder, image}) => {
     return ( 
-        <div className="relative z-30 w-full max-w-xl p-4 mx-auto bg-white rounded-md shadow-lg">
+        <div className="relative w-full max-w-xl p-4 mx-auto bg-white rounded-md shadow-lg">
             <div className="flex justify-end">
                 <button className="p-2 text-gray-400 rounded-md hover:bg-gray-100"
                     onClick={() => setState(false)}
