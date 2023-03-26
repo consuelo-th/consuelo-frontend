@@ -29,7 +29,7 @@ const MentalHealthTips = () => {
             <h2 className=" text-xl font-semibold">Tips on {selectedIssue.title}</h2>
             <div className=" space-y-6">
               {Object.values(selectedIssue.tips).map((tipText) => (
-                <div className=" flex">
+                <div className="flex" key={tipText}>
                   <img src="/images/bullet-point.svg"  className=" h-fit" />
                   <p className=" ml-3" key={tipText}>
                     {tipText}

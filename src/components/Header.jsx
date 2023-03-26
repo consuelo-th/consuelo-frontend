@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import Notification from "./Notification";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import user from "../services/user";
 
 
 export default () => {
     const [showNotification, setShowNotification] = useState(false);
+
+    
 
     function toggleNotification () {
         setShowNotification(!showNotification)
@@ -18,7 +20,6 @@ export default () => {
                     <img src="/images/logo.png" alt="Logo" />
                     <h1 className="font-bold">Consuelo</h1>
                 </div>
-
                 <div className="flex justify-between items-center gap-2">
                     <div onClick={() => toggleNotification()}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer">
@@ -46,7 +47,8 @@ export default () => {
                 <img src="/images/logo.png" alt="Logo" />
                 <h1 className="font-bold">Consuelo</h1>
             </div>
-
+            <div>
+            </div>
             <div className="flex justify-between items-center gap-2">
                 <div onClick={() => toggleNotification()}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer">

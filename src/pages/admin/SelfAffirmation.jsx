@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '../../components/common/button';
-import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';
 import Modal from '../../components/Modal';
 import UploadDialogue from '../../components/uploadDialogue';
@@ -11,7 +10,7 @@ const SelfAffirmation = () => {
     const handleClick = () => {
         setIsModalOpen(!isModalOpen);   
     }
-
+    
     return ( 
         <div className='px-4 bg-white'>
             <Modal>

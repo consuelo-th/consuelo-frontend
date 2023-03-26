@@ -6,7 +6,7 @@ import user from "../../services/user";
 const FeedBackandReviews = () => {
   
   if(!user.isAdmin) {
-    return <Navigate to="/" />
+    return <Navigate to="/dashboard" />
   }
 
   return (

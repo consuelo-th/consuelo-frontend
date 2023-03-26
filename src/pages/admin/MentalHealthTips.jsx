@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '../../components/common/button';
 import Modal from '../../components/Modal';
 import UploadDialogue from '../../components/uploadDialogue';
 import { healthTips } from '../../data';
-import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';
 
 const MentalHealthTips = () => {

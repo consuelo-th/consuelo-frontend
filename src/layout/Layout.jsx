@@ -4,7 +4,6 @@ import SideBar from '../components/SideBar';
 import user from '../services/user';
 import { useEffect, useState } from 'react';
 import { ModalContext } from '../contexts/ModalContext';
-import Modal from '../components/Modal';
 
 
 const Layout = ({children}) => {
@@ -17,7 +16,7 @@ const Layout = ({children}) => {
         setIsModalOpen(false)
     }
 
-    return ( 
+    return (
         <ModalContext.Provider value={{isModalOpen, setIsModalOpen}}>
             <div className='dashboard-layout' onFocus={closeModal}>
                 <header className={`dashboard-header fixed ${user.isAdmin && 'z-10'}`}>
