@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import user from "./services/user";
+import getUser from "./services/user";
 import "./App.css";
 import { 
   Landing,
+  Auth,
   Layout, 
   AdminBlog, 
   AdminBlogs, 
@@ -22,10 +23,13 @@ import {
 } from "./index";
 
 function App() {
+  const user = getUser();
 
   return (
     <Routes>
       <Route exact path="/" element={<Landing />} />
+      <Route path="/auth" element={<Auth />} />
+      
       <Route path="/dashboard" element={<Layout />}>
         <Route index element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
         <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />

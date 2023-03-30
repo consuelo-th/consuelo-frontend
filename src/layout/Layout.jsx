@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar';
-import user from '../services/user';
+import getUser from '../services/user';
 import { useEffect, useState } from 'react';
 import { ModalContext } from '../contexts/ModalContext';
 
 
 const Layout = ({children}) => {
+    const user = getUser();
     const [ isModalOpen, setIsModalOpen ] = useState(false);
 
     const openModal = () => {

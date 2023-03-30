@@ -2,9 +2,10 @@ import { navigation } from '../data';
 import { Link, useLocation } from 'react-router-dom';
 import { useContext } from "react";
 import { ModalContext } from '../contexts/ModalContext';
-import user from '../services/user';
+import getUser from '../services/user';
 
 const SideBar = () => {
+    const user = getUser();
     const location = useLocation().pathname;
     const active = ' border-primary-70 bg-primary-10 text-primary-60';
     const inactive = ' border-transparent text-white hover:border-primary-70 hover:bg-primary-10 hover:text-primary-60';

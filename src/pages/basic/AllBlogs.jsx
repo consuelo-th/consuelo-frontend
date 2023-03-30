@@ -13,7 +13,7 @@ const Blogs = () => {
     async function fetchData() {
       try {
         const { data } = await getBlogs();
-        setBlogs(data.posts);
+        setBlogs(data.data);
         setLoading(false);
       } catch (error) {
         setError(true);
@@ -24,7 +24,7 @@ const Blogs = () => {
     fetchData();
   }, []);
 
-  console.log(blogs);
+  (blogs);
 
   if (loading) {
     return <Spinner />;
@@ -38,9 +38,6 @@ const Blogs = () => {
     <div className="bg-white p-4">
       <div className="flex justify-between items-center py-4">
         <h1 className="font-bold text-primary-110">Blog</h1>
-        <Button size="" variant="light">
-          New Post
-        </Button>
       </div>
       <div className="p-2 space-y-4">
         {blogs.map((blog, idx) => {

@@ -1,12 +1,35 @@
-export const user1 = {
-    "email": "user1@yahoo.com",
-    "id": 1,
-    "token": "dfghj56789ghjkmghju3",
-    "isAdmin": true
-}
+import axios from "axios";
+import http from "./http";
 
-export const user2 = {
-    "email": "user2@yahoo.com",
-    "id": 2,
-    "token": "mtyjkljmhnjkmghju3"
-}
+
+
+const apiUrl = import.meta.env.VITE_APP_API_URL;
+
+const logIn = async (email, password) => {
+    
+  try {
+    const response = await http.post(`${apiUrl}/login`, { email, password });
+    const { token } = response.data;
+    localStorage.setItem("token", token);
+    return true;
+
+  } catch (err) {
+    return false;
+
+  }
+};
+
+const signUp = async (firstName, lastName, email, password) => {
+  try {
+    const response = await http.post(`${apiUrl}/signup`, { firstName, lastName, email, password });
+    const { token } = response.data;
+    localStorage.setItem("token", token);
+    return true;
+
+  } catch (err) {
+    return false;
+
+  }
+};
+
+export { logIn, signUp };
