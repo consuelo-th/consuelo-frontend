@@ -22,8 +22,9 @@ const logIn = async (email, password) => {
 const signUp = async (firstName, lastName, email, password) => {
   try {
     const response = await http.post(`${apiUrl}/signup`, { firstName, lastName, email, password });
-    const { token } = response.data;
-    localStorage.setItem("token", token);
+    console.log(response.data)
+    // const { token } = await response.data;
+    // localStorage.setItem("token", token);
     return true;
 
   } catch (err) {

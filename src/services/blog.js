@@ -1,11 +1,11 @@
 import http from "./http";
 
 export const getBlogs = () => {
-    return http.get("/blog")
+    return http.get("/api/blog")
     
 }
 
 export const getOneBlog = (id) => {
-    return http.get("/blog/" + id)
+    return http.get("/api/blog/" + id)
 }
 

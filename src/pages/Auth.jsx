@@ -1,31 +1,49 @@
 import { useState } from "react";
+import { useFormik } from "formik";
+import * as yup from "yup"
+import { logIn, signUp } from "../services/auth";
+
 
 
 export default () => {
     const [ currPage, setCurrPage ] = useState("login");
-    const [ userData, setUserData ] = useState({});
+    let schema;
 
-    function handleSubmit(e) {
-        e.preventDefault()
 
-        if (currPage === "login") {
-            // call login endpoint
+    if (currPage === "login") {
+        schema = yup.object({
+            email: yup.string().email().required("email is required"),
+            password: yup.string().min(7, 'must be at least 3 characters long').required("password is required")
+        });
 
-            return
+    } else {
+        schema = yup.object({
+            firstName: yup.string().required("first name is required"),
+            lastName: yup.string().required("last name is required"),
+            email: yup.string().email().required("email is required"),
+            password: yup.string().min(7, 'must be at least 3 characters long').required("password is required")
+        });
+    }
+
+    const { handleSubmit, handleChange, handleBlur, touched, values, errors } = useFormik({
+        initialValues:  {
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+        }, 
+        validationSchema: schema,
+        onSubmit: (values) => {
+            if (currPage === "login") {
+                delete values.firstName
+                delete values.lastName
+                console.table("login", values)
+    
+                return
+            }
+            return signUp(values)
         }
-
-        // call signup endpoint
-    }
-
-    function handleChange(e) {
-        let key = e.target.name;
-        let value = e.target.value;
-        let newData = {...userData}
-        newData[key] = value
-        setUserData(newData)
-
-        console.log(userData)
-    }
+    })
 
     function switchPage() {
         setCurrPage(() => {
@@ -91,8 +109,10 @@ export default () => {
                                             placeholder="First name"
                                             required
                                             className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                            onChange={(e) => handleChange(e)}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
                                         />
+                                        {touched.firstName && errors.firstName ? <p className="text-sm text-error-text ml-3">{errors.firstName}</p> : null}
                                     </div>
                                 )
                             }
@@ -108,8 +128,10 @@ export default () => {
                                             placeholder="Last name"
                                             required
                                             className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                            onChange={(e) => handleChange(e)}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
                                         />
+                                        {touched.lastName && errors.lastName ? <p className="text-sm text-error-text ml-3">{errors.lastName}</p> : null}
                                     </div>
                                 )
                             }
@@ -123,8 +145,10 @@ export default () => {
                                     placeholder="Email"
                                     required
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
+                                {touched.email && errors.email ? <p className="text-sm text-error-text ml-3">{errors.email}</p> : null}
                             </div>
                             <div>
                                 <label className="font-medium hidden">
@@ -136,8 +160,10 @@ export default () => {
                                     placeholder="Password"
                                     required
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
+                                {touched.password && errors.password ? <p className="text-sm text-error-text ml-3">{errors.password}</p> : null}
                             </div>
                             <div>
                                 {currPage === "login" && <a href="#" className="text-sm text-[#4E5760]">Forgot Password?</a>}
@@ -149,7 +175,9 @@ export default () => {
                                 }
                             </div>
                             <button
+                                type="submit"
                                 className="w-full px-4 py-2 text-white font-medium bg-primary-50 hover:bg-primary-60 rounded-lg duration-150"
+                                onClick={handleSubmit}
                                 
                             >
                                 Create account
