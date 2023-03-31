@@ -1,5 +1,40 @@
+import { useState } from "react";
+
 
 export default () => {
+    const [ currPage, setCurrPage ] = useState("login");
+    const [ userData, setUserData ] = useState({});
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        if (currPage === "login") {
+            // call login endpoint
+
+            return
+        }
+
+        // call signup endpoint
+    }
+
+    function handleChange(e) {
+        let key = e.target.name;
+        let value = e.target.value;
+        let newData = {...userData}
+        newData[key] = value
+        setUserData(newData)
+
+        console.log(userData)
+    }
+
+    function switchPage() {
+        setCurrPage(() => {
+            return currPage === "login" ? "signup" : "login"
+        })
+
+        console.log(currPage)
+    }
+
     return (
         <div>
             <div className="w-screen py-4 px-6 bg-primary-60 text-white flex justify-start items-center relative">
@@ -9,12 +44,12 @@ export default () => {
                 </div>
                 
             </div>
-            <main className="w-full grid grid-cols-5 bg-[#E5E5E5]">
+            <main className="w-full min-h-screen grid grid-cols-5 bg-[#E5E5E5]">
                 <div className="col-span-3 flex items-center justify-center">
                     <div className="w-full max-w-sm space-y-4 px-6 sm:px-0">
                         <div className="">
                             <div className="mt-5 space-y-2">
-                                <h3 className="text-primary-60 text-2xl font-bold sm:text-3xl">Create a new account</h3>
+                                <h3 className="text-primary-60 text-2xl font-bold sm:text-3xl">{currPage === "signup" ? "Create a new account" : "Sign into Consuelo"}</h3>
                                 <p className="text-body text-sm">You're one step towards getting better!</p>
                             </div>
                         </div>
@@ -44,37 +79,51 @@ export default () => {
                             onSubmit={(e) => e.preventDefault()}
                             className="space-y-3"
                         >
-                            <div>
-                                <label className="font-medium hidden">
-                                    First Name
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="First name"
-                                    required
-                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                />
-                            </div>
-                            <div>
-                                <label className="font-medium hidden">
-                                    Last name
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Last name"
-                                    required
-                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
-                                />
-                            </div>
+                            {
+                                currPage === "signup" && (
+                                    <div>
+                                        <label className="font-medium hidden">
+                                            First Name
+                                        </label>
+                                        <input
+                                            name="firstName"
+                                            type="text"
+                                            placeholder="First name"
+                                            required
+                                            className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
+                                            onChange={(e) => handleChange(e)}
+                                        />
+                                    </div>
+                                )
+                            }
+                            {
+                                currPage === "signup" && (
+                                    <div>
+                                        <label className="font-medium hidden">
+                                            Last name
+                                        </label>
+                                        <input
+                                            name="lastName"
+                                            type="text"
+                                            placeholder="Last name"
+                                            required
+                                            className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
+                                            onChange={(e) => handleChange(e)}
+                                        />
+                                    </div>
+                                )
+                            }
                             <div>
                                 <label className="font-medium hidden">
                                     Email
                                 </label>
                                 <input
+                                    name="email"
                                     type="email"
                                     placeholder="Email"
                                     required
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
+                                    onChange={(e) => handleChange(e)}
                                 />
                             </div>
                             <div>
@@ -82,23 +131,34 @@ export default () => {
                                     Password
                                 </label>
                                 <input
+                                    name="password"
                                     type="password"
                                     placeholder="Password"
                                     required
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-primary-50 focus:ring-0 shadow-sm rounded-lg"
+                                    onChange={(e) => handleChange(e)}
                                 />
                             </div>
                             <div>
-                                <p className="font-bold text-sm text-[#4E5760]">Password must be up to 7 characters</p>
-                                <p className="text-body text-sm">By signing up, you agree to the <a href="#" className="text-primary-60">Terms of Service and Privacy Policy</a>.</p>
+                                {currPage === "login" && <a href="#" className="text-sm text-[#4E5760]">Forgot Password?</a>}
+                                {currPage === "signup" && <p className="font-bold text-sm text-[#4E5760]">Password must be up to 7 characters</p>}
+                                {
+                                    currPage === "signup" && (
+                                        <p className="text-body text-sm">By signing up, you agree to the <a href="#" className="text-primary-60">Terms of Service and Privacy Policy</a>.</p>
+                                    )
+                                }
                             </div>
                             <button
                                 className="w-full px-4 py-2 text-white font-medium bg-primary-50 hover:bg-primary-60 rounded-lg duration-150"
+                                
                             >
                                 Create account
                             </button>
 
-                            <p className="text-body text-sm">Already have an account? <a href="#" className="text-primary-60">Sign in</a></p>
+                            <div>
+                                { currPage === "login" && <p className="text-body text-sm">Already have an account? <a href="#" className="text-primary-60" onClick={switchPage}>Sign up</a></p>}
+                                {currPage === "signup" && <p className="text-body text-sm">Already have an account? <a href="#" className="text-primary-60" onClick={switchPage}>Sign in</a></p>}
+                            </div>
                         </form>
                     </div>
                 </div>
