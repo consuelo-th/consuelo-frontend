@@ -1,9 +1,10 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { FeedbackData } from "../../data";
-import user from "../../services/user";
+import getUser from "../../services/user";
 
 const FeedBackandReviews = () => {
+  const user = getUser();
   
   if(!user.isAdmin) {
     return <Navigate to="/dashboard" />

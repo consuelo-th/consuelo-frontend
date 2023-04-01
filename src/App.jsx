@@ -1,9 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import user from "./services/user";
+import getUser from "./services/user";
 import "./App.css";
 import { 
   Landing,
+  Auth,
   Layout, 
   AdminBlog, 
   AdminBlogs, 
@@ -18,27 +19,38 @@ import {
   BasicBlogs,
   BasicSelfAffirmation,
   BasicMentalHealthTips,
-  NoPage
+  NoPage,
+  Logout
 } from "./index";
+import Protected from "./pages/Protected";
 
 function App() {
+  const user = getUser();
+
+  
 
   return (
+    
     <Routes>
       <Route exact path="/" element={<Landing />} />
-      <Route path="/dashboard" element={<Layout />}>
-        <Route index element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
-        <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
-        <Route path="self-affirmation" element={user.isAdmin ? <AdminSelfAffirmation /> : <BasicSelfAffirmation />} />
-        <Route path="mental-health-tips" element={user.isAdmin ? <AdminMentalHealthTips /> : <BasicMentalHealthTips />} />
-        <Route path="forum" element={<Forum />} />
-        <Route path="blogs" element={user.isAdmin ? <AdminBlogs /> : <BasicBlogs />} />
-        <Route path="blog/:id" element={user.isAdmin ? <AdminBlog /> : <BasicBlog />} />
-        <Route path="feedbacks" element={<FeedbackandReviews />} />
-      </Route>
-
-      <Route path="/me" element={<Profile />} />
-      <Route path="*" element={<NoPage />} />
+      <Route path="/auth" element={<Auth />} />
+        <Route path="/dashboard" element={
+          <Protected>
+            <Layout />
+          </Protected>
+        }>
+          <Route index element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+          <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+          <Route path="self-affirmation" element={user.isAdmin ? <AdminSelfAffirmation /> : <BasicSelfAffirmation />} />
+          <Route path="mental-health-tips" element={user.isAdmin ? <AdminMentalHealthTips /> : <BasicMentalHealthTips />} />
+          <Route path="forum" element={<Forum />} />
+          <Route path="blogs" element={user.isAdmin ? <AdminBlogs /> : <BasicBlogs />} />
+          <Route path="blog/:id" element={user.isAdmin ? <AdminBlog /> : <BasicBlog />} />
+          <Route path="feedbacks" element={<FeedbackandReviews />} />
+        </Route>
+        <Route path="/me" element={<Profile />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<NoPage />} />
     </Routes>
   );
 }

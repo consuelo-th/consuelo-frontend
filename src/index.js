@@ -1,4 +1,5 @@
 export { default as Landing} from "./pages/Landing";
+export { default as Auth } from "./pages/Auth"
 export { default as Layout} from "./layout/Layout";
 export { default as Forum} from "./pages/Forum";
 export { default as Profile} from "./pages/Profile";
@@ -13,7 +14,7 @@ export { default as BasicBlogs } from "./pages/basic/AllBlogs";
 export { default as BasicBlog } from "./pages/basic/Blog";
 export { default as BasicSelfAffirmation} from "./pages/basic/SelfAffirmation";
 export { default as BasicMentalHealthTips} from "./pages/basic/MentalHealthTips";
+export { default as Logout} from "./pages/Logout";
 
-// export { default as BasicFeedbackandReviews} from "./pages/bacic/FeedbackandReviews";
 
 export { default as NoPage} from "./pages/NoPage";

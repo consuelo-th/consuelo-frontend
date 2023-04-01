@@ -24,7 +24,7 @@ const Blogs = () => {
 
           try {
             const { data } = await getBlogs();
-            setBlogs(data.posts);
+            setBlogs(data.data);
             setLoading(false);
 
           } catch (error) {
@@ -36,7 +36,7 @@ const Blogs = () => {
         fetchData();
       }, []);
 
-      console.log(blogs)
+      (blogs)
 
     if (loading) {
         return <Spinner />

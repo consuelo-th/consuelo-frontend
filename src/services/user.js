@@ -1,7 +1,28 @@
-import { user1, user2 } from "./auth";
+import { useEffect, useState } from "react";
+import jwtDecode from "jwt-decode";
 
-let user = user1;
-localStorage.setItem("user", JSON.stringify(user));
-console.log(JSON.parse(localStorage.getItem("user")))
+const token = localStorage.getItem("token");
 
-export default user;
+function getUser () {
+  let user = {};
+
+  if (token) {
+    try {
+      user = jwtDecode(token);
+
+    } catch (err) {
+      localStorage.removeItem("token");
+      user = {};
+
+    }
+
+  } else {
+    user = {};
+
+  }
+
+return user;
+
+  
+}
+export default getUser;

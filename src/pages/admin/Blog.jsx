@@ -13,7 +13,7 @@ const Blog = () => {
         const fetchData = async () => {
             try {
                 const { data }  = await getOneBlog(id);
-                setBlog(data)
+                setBlog(data.data)
                 setLoading(false);
             }
             catch(error) {
@@ -24,7 +24,7 @@ const Blog = () => {
         fetchData();
     }, []);
 
-    // console.log(blog)
+    // (blog)
 
     if (loading) {
         return <Spinner />

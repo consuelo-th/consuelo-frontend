@@ -1,14 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import Notification from "./Notification";
 import { Link, Navigate } from "react-router-dom";
-import user from "../services/user";
+import getUser  from "../services/user";
 
 
 export default () => {
+    const user = getUser();
     const [showNotification, setShowNotification] = useState(false);
 
     
-
+    (user)
     function toggleNotification () {
         setShowNotification(!showNotification)
     }
