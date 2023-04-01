@@ -14,6 +14,7 @@ export { default as BasicBlogs } from "./pages/basic/AllBlogs";
 export { default as BasicBlog } from "./pages/basic/Blog";
 export { default as BasicSelfAffirmation} from "./pages/basic/SelfAffirmation";
 export { default as BasicMentalHealthTips} from "./pages/basic/MentalHealthTips";
+export { default as Logout} from "./pages/Logout";
 
 
 export { default as NoPage} from "./pages/NoPage";

@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup"
 import { logIn, signUp } from "../services/auth";
+import getUser from "../services/user";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default () => {
+    const user = getUser();
     const [ currPage, setCurrPage ] = useState("login");
+    const [ serverErrors, setServerErrors ] = useState([]);
+    const navigate = useNavigate();
     let schema;
-
 
     if (currPage === "login") {
         schema = yup.object({
@@ -33,15 +37,41 @@ export default () => {
             password: "",
         }, 
         validationSchema: schema,
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
+
             if (currPage === "login") {
-                delete values.firstName
-                delete values.lastName
-                console.table("login", values)
+                delete values.firstName;
+                delete values.lastName;
+                
+                try {
+                    await logIn(values);
+                    navigate("/dashboard");
+                    console.log("redirect")
+
+                } catch(err) {
+                    if (err.response && err.response.status >= 400) {
+                        const errors = {...serverErrors};
+                        console.log(err.message)
+                    }
+
+                }
+
+            } else {
+                try {
+                    await signUp(values);
+                    navigate("/dashboard")
+                    console.log("redirect")
     
-                return
+                } catch(err) {
+                    if (err.response && err.response.status >= 400) {
+                        const errors = {...serverErrors};
+                        console.log(err.message)
+                    }
+    
+                }
+
             }
-            return signUp(values)
+
         }
     })
 
@@ -180,7 +210,7 @@ export default () => {
                                 onClick={handleSubmit}
                                 
                             >
-                                Create account
+                               {currPage === "login" ? "Login" : "Create account"}
                             </button>
 
                             <div>
