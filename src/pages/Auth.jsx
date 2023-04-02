@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup"
 import { logIn, signUp } from "../services/auth";
@@ -46,7 +46,6 @@ export default () => {
                 try {
                     await logIn(values);
                     navigate("/dashboard");
-                    console.log("redirect")
 
                 } catch(err) {
                     if (err.response && err.response.status >= 400) {
@@ -60,7 +59,6 @@ export default () => {
                 try {
                     await signUp(values);
                     navigate("/dashboard")
-                    console.log("redirect")
     
                 } catch(err) {
                     if (err.response && err.response.status >= 400) {
@@ -75,6 +73,12 @@ export default () => {
         }
     })
 
+    if (localStorage.getItem("token")) {
+        useEffect(() => {
+            navigate("/dashboard")
+        }, [])
+    }
+
     function switchPage() {
         setCurrPage(() => {
             return currPage === "login" ? "signup" : "login"
@@ -82,6 +86,7 @@ export default () => {
 
         console.log(currPage)
     }
+
 
     return (
         <div>
@@ -92,11 +97,11 @@ export default () => {
                 </div>
                 
             </div>
-            <main className="w-full min-h-screen grid grid-cols-5 bg-[#E5E5E5]">
-                <div className="col-span-3 flex items-center justify-center">
+            <main className="w-full min-h-screen flex justify-between bg-[#E5E5E5]">
+                <div className="flex-1 flex items-center justify-center h-screen">
                     <div className="w-full max-w-sm space-y-4 px-6 sm:px-0">
                         <div className="">
-                            <div className="mt-5 space-y-2">
+                            <div className="mt-5 space-y-2 text-center lg:text-left">
                                 <h3 className="text-primary-60 text-2xl font-bold sm:text-3xl">{currPage === "signup" ? "Create a new account" : "Sign into Consuelo"}</h3>
                                 <p className="text-body text-sm">You're one step towards getting better!</p>
                             </div>
@@ -220,7 +225,7 @@ export default () => {
                         </form>
                     </div>
                 </div>
-                <div className="relative col-span-2 hidden items-center justify-end lg:flex">
+                <div className="relative hidden items-center justify-center h-screen lg:flex">
                         <img src="/images/auth_frame.png" className="max-h-screen"/>
                 </div>
             </main>
