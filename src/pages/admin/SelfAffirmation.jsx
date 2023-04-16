@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../../components/common/button';
 import { ModalContext } from '../../contexts/ModalContext';
 import Modal from '../../components/Modal';
@@ -7,14 +7,19 @@ import Confirm from '../../components/common/confirmationDialogue'
 
 const SelfAffirmation = () => {
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
+    const [confirm, setConfirm] = useState(false)
+
     const handleClick = () => {
-        setIsModalOpen(!isModalOpen);   
+        setIsModalOpen(true);  
+        setConfirm(false)
     }
-    
+    const header = 'Self Affirmation'
+    const text = 'self affirmation'
     return ( 
         <div className='px-4 bg-white'>
             <Modal>
-                <UploadDialogue title="Self Affirmation" placeholder="Enter words or affrimation here" />
+                {!confirm && <UploadDialogue title="Self Affirmation" placeholder="Enter words or affrimation here" handleConfirm={setConfirm}/>}
+                {confirm && <Confirm header={header} text={text} />}
             </Modal>
             <div className='flex justify-between items-center py-4'>
                 <h1 className='font-bold text-primary-110'>Self Affirmation</h1>   

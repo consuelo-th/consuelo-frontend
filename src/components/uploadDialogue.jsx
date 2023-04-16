@@ -1,9 +1,19 @@
-const UploadDialogue = ({title, placeholder, image}) => {
+import { useContext } from 'react';
+import { ModalContext } from '../contexts/ModalContext';
+
+const UploadDialogue = ({title, placeholder, image, handleConfirm}) => {
+    const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
+
+    const handleClick = () => {
+        handleConfirm(true)
+        console.log(isModalOpen)
+    }
+
     return ( 
         <div className="relative w-full max-w-xl p-4 mx-auto bg-white rounded-md shadow-lg">
             <div className="flex justify-end">
                 <button className="p-2 text-gray-400 rounded-md hover:bg-gray-100"
-                    onClick={() => setState(false)}
+                    onClick={() => setIsModalOpen(false)}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mx-auto" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -32,7 +42,7 @@ const UploadDialogue = ({title, placeholder, image}) => {
                         <label for="message" class="block mb-2 text-lg font-semibold text-black">{title}</label>
                         <textarea id="message" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-primary-50 focus:ring-primary-60 focus:border-primary-50" placeholder={placeholder}></textarea>
                     </div>
-                    <button className="block w-full mt-3 py-3 px-4 font-medium text-sm text-center text-white bg-primary-50 hover:bg-primary-60 active:bg-primary-60 rounded-lg ring-offset-2 ring-primary-50 focus:ring-2">
+                    <button onClick={handleClick} className="block w-full mt-3 py-3 px-4 font-medium text-sm text-center text-white bg-primary-50 hover:bg-primary-60 active:bg-primary-60 rounded-lg ring-offset-2 ring-primary-50 focus:ring-2">
                         Upload
                     </button>
                 </form>

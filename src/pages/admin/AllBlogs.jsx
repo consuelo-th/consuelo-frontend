@@ -7,15 +7,19 @@ import UploadDialogue from '../../components/uploadDialogue';
 import { getBlogs } from '../../services/blog';
 import { useContext } from 'react';
 import { ModalContext } from '../../contexts/ModalContext';
+import Confirm from '../../components/common/confirmationDialogue'
+
 
 const Blogs = () => {
     const [ blogs, setBlogs ] = useState(null);
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(false);
+    const [confirm, setConfirm] = useState(false)
 
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
     const handleClick = () => {
-        setIsModalOpen(!isModalOpen);   
+        setIsModalOpen(true);  
+        setConfirm(false)
     }
 
     
@@ -49,11 +53,15 @@ const Blogs = () => {
             </div>
         )
     }
-        
+    const header = 'Blog Post'
+    const text = 'blog post'
+    
     return ( 
         <div className="bg-white p-4">
             <Modal>
-                <UploadDialogue title="Blog Post" placeholder="What’s going on ?" image={true}/>
+                {!confirm && <UploadDialogue title="Blog Post" placeholder="What’s going on ?" image={true} handleConfirm={setConfirm} />}
+                {confirm && <Confirm header={header} text={text} />}
+
             </Modal>
             <div className='flex justify-between items-center py-4'>
                 <h1 className='font-bold text-primary-110'>Blog</h1>

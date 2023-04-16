@@ -1,21 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from '../../components/common/button';
 import Modal from '../../components/Modal';
 import UploadDialogue from '../../components/uploadDialogue';
 import { healthTips } from '../../data';
 import { ModalContext } from '../../contexts/ModalContext';
+import Confirm from '../../components/common/confirmationDialogue'
+
 
 const MentalHealthTips = () => {
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext);
-    const handleClick = () => {
-        setIsModalOpen(!isModalOpen);   
-    }
+    const [confirm, setConfirm] = useState(false)
 
+    const handleClick = () => {
+        setIsModalOpen(true);  
+        setConfirm(false)
+    }
+    const header = 'Mental Health Tip'
+    const text = 'mental health tip'
 
     return ( 
         <div className='px-4 bg-white'>
             <Modal>
-                <UploadDialogue title="Mental Health Tips" placeholder="What’s going on ?" image={true}/>
+                {!confirm && <UploadDialogue title="Mental Health Tips" placeholder="What’s going on ?" image={true} handleConfirm={setConfirm} />}
+                {confirm && <Confirm header={header} text={text} />}
+
             </Modal>
             <div className='flex justify-between items-center py-4'>
                 <h1 className='font-bold text-primary-110'>Mental Health Tips</h1>

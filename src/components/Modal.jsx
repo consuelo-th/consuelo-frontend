@@ -6,6 +6,7 @@ export default ({children}) => {
     const closeModal = (e) => {
         e.stopPropagation()
         setIsModalOpen(false)
+        console.log(isModalOpen)
     }
 
     return (
