@@ -16,6 +16,14 @@ const SideBar = () => {
     const handleExit = () => {
         setHoveredIndex(null)
     }
+    const filteredNav = navigation.filter(nav => {
+        if (!user.isAdmin){
+            return nav.title !== "Feedback and Reviews"
+        }
+        else {
+            return nav
+        }
+    })
     return ( 
             <div className={`h-screen w-fit py-4 ${user.isAdmin ? "bg-primary-50" : "bg-primary-60"}`}>
                 {/* {
@@ -26,9 +34,9 @@ const SideBar = () => {
                         </div>
                     )
                 } */}
-                <ul className='flex flex-col justify-between items-start gap-3'>
+                <ul className='flex flex-col justify-between items-start gap-5 mt-10'>
                     {
-                        navigation.map((nav, idx) => {
+                        filteredNav.map((nav, idx) => {
                             return (
                                 <li key={nav.id} onMouseEnter={() => handleEnter(nav.id)} onMouseLeave={() => handleExit()}  className={`transition duration-700 ease-in-out py-3 px-5 w-full border-l-8 cursor-pointer ${+ location === nav.path ? active : inactive}` }>
 
