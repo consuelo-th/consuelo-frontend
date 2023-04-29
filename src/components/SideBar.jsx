@@ -8,7 +8,7 @@ const SideBar = () => {
     const [hoveredIndex, setHoveredIndex] =  useState(null)
     const user = getUser();
     const location = useLocation().pathname;
-    const active = ' border-primary-70 bg-primary-10 text-primary-60';
+    const active = 'border-primary-70 bg-primary-10 text-primary-60';
     const inactive = ' border-transparent text-white hover:border-primary-70 hover:bg-primary-10 hover:text-primary-60';
     const handleEnter = (index) => {
         setHoveredIndex(index)
@@ -38,13 +38,13 @@ const SideBar = () => {
                     {
                         filteredNav.map((nav, idx) => {
                             return (
-                                <li key={nav.id} onMouseEnter={() => handleEnter(nav.id)} onMouseLeave={() => handleExit()}  className={`transition duration-700 ease-in-out py-3 px-5 w-full border-l-8 cursor-pointer ${+ location === nav.path ? active : inactive}` }>
+                                <li key={nav.id} onMouseEnter={() => handleEnter(nav.id)} onMouseLeave={() => handleExit()}  className={`transition duration-700 ease-in-out py-3 px-5 w-full border-l-8 cursor-pointer ${location === nav.path ? active : inactive}` }>
 
                                     <Link to={nav.path}>
                                         <div className='flex gap-2 items-center'>
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
                                                 {nav.svg.path.map(icon => {
-                                                    return <path key={icon} d={icon} stroke={hoveredIndex === nav.id ? '#2C6E49' : 'white'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                    return <path key={icon} d={icon} stroke={hoveredIndex === nav.id || location === nav.path  ? '#2C6E49' : 'white'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                                 })}
                                             </svg>
                                            
