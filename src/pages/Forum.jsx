@@ -3,10 +3,12 @@ import Button from '../components/common/button';
 import ForumCard from '../components/ForumCard';
 import { ModalContext } from "../contexts/ModalContext";
 import Modal from '../components/Modal'
+import getUser from '../services/user';
 
 const Forum = () => {
     const [newPost, setNewPost] = useState(false)
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext)
+    const user = getUser();
     const displayModal = () => {
         setIsModalOpen(true)
         setNewPost(true)
@@ -16,13 +18,13 @@ const Forum = () => {
     }
 
     return ( 
-        <div className='px-4 grid grid-cols-10 gap-3 relative'>
+        <div className='px-4 py-8 grid grid-cols-10 gap-3 '>
             <div className='col-span-7'>
                 <div>
                     <h1 className='font-bold text-primary-110 mb-4'>Forum</h1>
                 </div>
 
-               <div className='mt-8'>
+               <div className='mt-5'>
                     <ForumCard />
                     <ForumCard />
                     <ForumCard />
@@ -35,11 +37,14 @@ const Forum = () => {
             </div>
             <div className='col-span-3 flex flex-col fixed right-6'>
                 <div className='self-center mb-4'>
-                    <Button handleClick={displayModal} size='lg' variant='light'>New Post</Button>
+                    <Button handleClick={displayModal} size='lg' variant='light'>Start a new topic</Button>
                 </div>
-
-                <div className='bg-white h-screen rounded-lg'>
-                    <h2 className='font-bold text-center text-primary-50'>Top Members</h2>
+                {user.isAdmin && 
+                
+                    <div className='bg-white h-screen rounded-lg px-5'>
+                        <h2 className='font-bold text-start text-primary-50 pt-8'>
+                            Top Members
+                        </h2>
 
                         <div className='flex flex-col gap-2 px-2 mt-4'>
                             <div className='flex gap-2 items-center'>
@@ -79,8 +84,9 @@ const Forum = () => {
                                 <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Profile picture" className="rounded-full w-12 h-12" />
                                 <p>Hassan Oladele</p>
                             </div>
+                        </div>
                     </div>
-                </div>
+                }
             
             </div>
 
