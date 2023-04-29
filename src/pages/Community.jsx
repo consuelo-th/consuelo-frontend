@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import Button from '../components/common/button';
-import ForumCard from '../components/ForumCard';
+import CommunityCard from '../components/CommunityCard';
 import { ModalContext } from "../contexts/ModalContext";
 import Modal from '../components/Modal'
 import getUser from '../services/user';
 
-const Forum = () => {
+const Community = () => {
     const [newPost, setNewPost] = useState(false)
     const { isModalOpen, setIsModalOpen } = useContext(ModalContext)
     const user = getUser();
@@ -25,13 +25,13 @@ const Forum = () => {
                 </div>
 
                <div className='mt-5'>
-                    <ForumCard />
-                    <ForumCard />
-                    <ForumCard />
-                    <ForumCard />
-                    <ForumCard />
-                    <ForumCard />
-                    <ForumCard />
+                    <CommunityCard />
+                    <CommunityCard />
+                    <CommunityCard />
+                    <CommunityCard />
+                    <CommunityCard />
+                    <CommunityCard />
+                    <CommunityCard />
                </div>
 
             </div>
@@ -129,4 +129,4 @@ const Forum = () => {
      );
 }
  
-export default Forum;
+export default Community;
