@@ -219,7 +219,7 @@ export default () => {
                             </button>
 
                             <div>
-                                { currPage === "login" && <p className="text-body text-sm">Already have an account? <a href="#" className="text-primary-60" onClick={switchPage}>Sign up</a></p>}
+                                { currPage === "login" && <p className="text-body text-sm">Don't have an account? <a href="#" className="text-primary-60" onClick={switchPage}>Sign up</a></p>}
                                 {currPage === "signup" && <p className="text-body text-sm">Already have an account? <a href="#" className="text-primary-60" onClick={switchPage}>Sign in</a></p>}
                             </div>
                         </form>
