@@ -10,6 +10,8 @@ const Layout = ({children}) => {
     const user = getUser();
     const [ isModalOpen, setIsModalOpen ] = useState(false);
 
+    const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
     const openModal = () => {
         setIsModalOpen(true)
     }
@@ -18,7 +20,7 @@ const Layout = ({children}) => {
     }
 
     return (
-        <ModalContext.Provider value={{isModalOpen, setIsModalOpen}}>
+        <ModalContext.Provider value={{isModalOpen, setIsModalOpen, hamburgerOpen, setHamburgerOpen}}>
             <div className='dashboard-layout' onFocus={closeModal}>
                 <header className={`dashboard-header fixed ${user.isAdmin && 'z-10'}`}>
                     <Header />

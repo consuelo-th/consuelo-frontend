@@ -1,18 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import Notification from "./Notification";
 import { Link, Navigate } from "react-router-dom";
 import getUser  from "../services/user";
+import { ModalContext } from "../contexts/ModalContext";
 
 
 export default () => {
     const user = getUser();
     const [showNotification, setShowNotification] = useState(false);
 
-    
+
     (user)
     function toggleNotification () {
         setShowNotification(!showNotification)
     }
+
 
     if (user.isAdmin) {
         return (
@@ -44,6 +46,8 @@ export default () => {
 
     return (
         <div className="w-screen py-4 px-6 bg-white flex justify-between items-center relative">
+            
+
             {/* keeping the logo on small screens for admin because we are focused on mobile responsiveness for basic user for now */}
             <div className={`${user.isAdmin ? 'flex' : 'hidden md:flex '} justify-between items-center gap-2`}>
                 <img src="/images/logo.png" alt="Logo" />
