@@ -44,7 +44,8 @@ export default () => {
 
     return (
         <div className="w-screen py-4 px-6 bg-white flex justify-between items-center relative">
-            <div className="flex justify-between items-center gap-2">
+            {/* keeping the logo on small screens for admin because we are focused on mobile responsiveness for basic user for now */}
+            <div className={`${user.isAdmin ? 'flex' : 'hidden md:flex '} justify-between items-center gap-2`}>
                 <img src="/images/logo.png" alt="Logo" />
                 <h1 className="font-bold">Consuelo</h1>
             </div>

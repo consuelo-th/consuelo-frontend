@@ -25,7 +25,10 @@ const SideBar = () => {
         }
     })
     return ( 
-            <div className={`h-screen w-fit py-4 ${user.isAdmin ? "bg-primary-50" : "bg-primary-60"}`}>
+
+            <div className={` h-screen w-fit py-4 ${user.isAdmin ? "bg-primary-50" : "bg-primary-60 hidden md:block"}`}>
+                {/* keeping the sidebar on small screens for admin because we are focused on mobile responsiveness for basic user for now */}
+
                 {/* {
                     !user.isAdmin && (
                         <div className="flex gap-2 text-white ml-16">
