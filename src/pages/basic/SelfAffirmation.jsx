@@ -25,7 +25,7 @@ const SelfAffirmation = () => {
         Daily affirmation
       </p>
       <div className="flex items-center pt-6">
-        <div className="relative mr-32  ">
+        <div className="relative mr-32 -z-10">
           <p className="absolute top-[9rem] mx-[5.25rem]  ">
             {quotes[activeCard]}
           </p>

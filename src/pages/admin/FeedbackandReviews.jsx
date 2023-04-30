@@ -11,11 +11,11 @@ const FeedBackandReviews = () => {
   }
 
   return (
-    <div className="h-[50rem] bg-white rounded p-5">
+    <div className="min-h-[50rem] bg-white rounded p-5">
       <h3 className=" font-semibold">Feedback & Reviews </h3>
       <div>
         {FeedbackData.map((item, itemIndex) => (
-          <div className="h-[12rem]  rounded p-4 shadow-md mt-7">
+          <div className="min-h-[12rem] rounded-md px-4 py-7  shadow-custom mt-7">
             <div className="flex ">
               <div className="w-full  flex items-center gap-3 ">
                 <img
