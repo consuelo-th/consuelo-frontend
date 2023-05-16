@@ -86,7 +86,7 @@ export let navigation = [
   {
     id: 6,
     title: "Logout",
-    path: "/logout",
+    isLogout: true,
     svg: {
       path: [
         "M17.4399 14.62L19.9999 12.06L17.4399 9.5",
@@ -341,4 +341,29 @@ export const userBlogHomeData = [
     image: ''
   },
 ]
+
+export const quotes = [
+  {
+    id: 1,
+    quote: "I am a force that the world needs. I belong here.",
+  },
+  {
+    id: 2,
+    quote: "I am a super-hero that the world needs. I belong here.",
+  },
+  {
+    id: 3,
+    quote: "I am the help the world needs. I belong here.",
+
+  },
+  {
+    id: 4,
+    quote: "I am the liberator that the world needs. I belong here.",
+
+  },
+  {
+    id: 5,
+    quote: "I am the hustle that the world needs. I belong here.",
+  },
+];
 

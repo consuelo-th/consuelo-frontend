@@ -14,9 +14,7 @@ export default ({header, text}) => {
         <div className="py-3 pt-8 max-w-sm bg-white rounded-xl left-1/2 absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 z-50">
             <button onClick={closeModal} className="text-3xl ml-auto absolute right-4 top-2">&times;</button>
             <div className="flex items-center justify-center flex-none w-12 h-12 mx-auto bg-green-100 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-green-600">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
+                <img src="/images/sucessful-icon.svg" alt="confirmation-icon" />
             </div>
             {
                 !state && 

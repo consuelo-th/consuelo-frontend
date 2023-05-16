@@ -30,7 +30,7 @@ const Notification = () => {
         },
     ]
     return ( 
-        <div className='flex flex-col gap-4 bg-white py-3 px-4 max-w-md absolute top-15 right-16 cursor-pointer'>
+        <div className='notification-card flex flex-col gap-4 bg-white py-3 px-4 max-w-md absolute rounded-lg  md:rounded-r-none-lg shadow-custom md:top-16 top-14 right-20 md:right-[90px] cursor-pointer'>
             {
                 notifications.map((msg, idx) => {
                     return (

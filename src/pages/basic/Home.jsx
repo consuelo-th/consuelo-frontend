@@ -45,7 +45,7 @@ export default () => {
 
     return (        
         <>
-            <div className=" xl:grid xl:grid-cols-3 items-strech ">
+            <div className="xl:grid xl:grid-cols-3 items-strech ">
                 <div className="xl:col-span-2 pb-4">
 
                     <div className="rounded-xl bg-white p-6 mt-4">

@@ -40,15 +40,15 @@ const Profile = () => {
                             <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
                             <form action="/" className='mt-4 space-y-6'>
-                                <Input name={'currentPassword'} type="password" label="Current password" placeholder="**********" classname='max-w-3xl' inputclassname='w-[60%]'/>
+                                <Input name={'currentPassword'} type="password" label="Current password" placeholder="**********" classname='max-w-3xl' inputclassname='w-full md:w-[60%]'/>
 
                                 <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
-                                <Input name={'newPassword'} type="password" label="New Password" placeholder="**********" classname='max-w-3xl' inputclassname='w-[60%]' />
+                                <Input name={'newPassword'} type="password" label="New Password" placeholder="**********" classname='max-w-3xl' inputclassname='w-full md:w-[60%]' />
 
                                 <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
-                                <Input name={'confirmNewPassword'} type="password" label="Confirm password" placeholder="**********" classname='max-w-3xl' inputclassname='w-[60%]'/>
+                                <Input name={'confirmNewPassword'} type="password" label="Confirm password" placeholder="**********" classname='max-w-3xl' inputclassname='w-full md:w-[60%]'/>
                                 
                                 <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
@@ -75,9 +75,9 @@ const Profile = () => {
                             <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
                             <form action="/" className='mt-4 space-y-6'>
-                                <div className='flex gap-5 justify-between items-center max-w-3xl'>
+                                <div className=' flex flex-col md:flex-row md:gap-5 gap-3 justify-start md:justify-between md:items-center max-w-3xl'>
                                     <p className=''>Full Name</p>
-                                    <div className='flex space-x-3 gap-1 w-[66%]'>
+                                    <div className='flex space-x-3 gap-1 w-full md:w-[66%]'>
                                         <input
                                             name='firstName'
                                             id='firstName' 
@@ -94,15 +94,15 @@ const Profile = () => {
                                 </div>
                                 <hr className='mt-4 mb-5 border border-[#E4E7EC]' />
                                 {/* <Input name={'name'} type="text" label="Name" placeholder="**********" count={2}/> */}
-                                <Input name={'email'} type="email" label="Email address" placeholder="olivia@untitledui.com" classname='max-w-3xl' inputclassname='w-[66%]' />
+                                <Input name={'email'} type="email" label="Email address" placeholder="olivia@untitledui.com" classname='max-w-3xl' inputclassname='w-full md:w-[66%]' />
 
                                 <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
-                                <Input name={'phone'} type="text" label="Phone Number" placeholder="08127878919" classname='max-w-3xl' inputclassname='w-[66%]' />
+                                <Input name={'phone'} type="text" label="Phone Number" placeholder="08127878919" classname='max-w-3xl' inputclassname='w-full md:w-[66%]' />
 
                                 <hr className='mt-4 mb-5 border border-gray-200 opacity-80' />
 
-                                <div className="flex max-w-5xl">
+                                <div className="flex md:flex-row flex-col max-w-5xl">
                                     <div className="flex pl-0 p-6">
                                         <div className="">
                                             <p className='text-sm text-[#344054]'>Your Photo</p>
@@ -112,7 +112,7 @@ const Profile = () => {
                                             <img src={avi} alt="avi" />
                                         </div>
                                     </div>
-                                    <div className="border border-gray-200 p-6 ml-5 w-[50%] bg-white">
+                                    <div className="border border-gray-200 p-6 md:ml-5 w-full md:w-[50%] bg-white">
                                         <label htmlFor='avatar' className='flex flex-col justify-center items-center cursor-pointer'>
                                             <input type="file" id="avatar" name="avatar" accept="image/*" className="hidden" />
                                             <img src={upload} alt="avi" />

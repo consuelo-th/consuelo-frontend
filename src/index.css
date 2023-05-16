@@ -32,6 +32,10 @@ body {
 .section-spacing {
     @apply p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20;
 }
+.notification-card__parent {
+    filter: drop-shadow( 10px 15px 20px rgb(0 0 0 / 0.1));
+}
+
 
 .dashboard-layout {
     display: grid;
@@ -59,14 +63,17 @@ body {
     margin-inline: 2rem;
 }
 
-@media (max-width: 768px) {
-    .dashboard-layout {
-        grid-template-areas:
-        "header"
-        "nav"
-        "content";
-
-      
+@media (min-width: 768px) {
+    .notification-card::after {
+        content: '';
+        height: 1rem;
+        width: 1rem;
+        position: absolute;
+        top: -1rem;
+        right: -0.05rem;
+        background-color: white;
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
     }
 
 }
