@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ForumCard = () => {
+const CommunityCard = () => {
     return ( 
         <div className="border bg-white shadow-sm rounded-lg p-4 mb-4">
             <div className="flex space-x-4">
@@ -28,4 +28,4 @@ const ForumCard = () => {
      );
 }
  
-export default ForumCard;
+export default CommunityCard;

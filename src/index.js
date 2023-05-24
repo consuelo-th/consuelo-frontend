@@ -1,7 +1,7 @@
 export { default as Landing} from "./pages/Landing";
 export { default as Auth } from "./pages/Auth"
 export { default as Layout} from "./layout/Layout";
-export { default as Forum} from "./pages/Forum";
+export { default as Community} from "./pages/Community";
 export { default as Profile} from "./pages/Profile";
 export { default as AdminHome} from "./pages/admin/Home";
 export { default as AdminBlog } from "./pages/admin/Blog";

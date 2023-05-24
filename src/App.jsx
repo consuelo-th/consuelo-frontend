@@ -10,7 +10,7 @@ import {
   AdminBlogs, 
   AdminHome, 
   Profile,
-  Forum,
+  Community,
   AdminSelfAffirmation, 
   FeedbackandReviews, 
   AdminMentalHealthTips, 
@@ -43,7 +43,7 @@ function App() {
           <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
           <Route path="self-affirmation" element={user.isAdmin ? <AdminSelfAffirmation /> : <BasicSelfAffirmation />} />
           <Route path="mental-health-tips" element={user.isAdmin ? <AdminMentalHealthTips /> : <BasicMentalHealthTips />} />
-          <Route path="forum" element={<Forum />} />
+          <Route path="community" element={<Community />} />
           <Route path="blogs" element={user.isAdmin ? <AdminBlogs /> : <BasicBlogs />} />
           <Route path="blog/:id" element={user.isAdmin ? <AdminBlog /> : <BasicBlog />} />
           <Route path="feedbacks" element={<FeedbackandReviews />} />
