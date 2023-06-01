@@ -110,7 +110,7 @@ export default () => {
             <p class="text-body mb-3 lg:mb-8">Hussy Ameen - Nov 1, 2022</p>
           </div>
           <div class="my-4">
-            <img src="/images/mental-health.png" alt="mental-health" />
+            <img src="/images/mental-health.png " alt="mental-health" />
           </div>
           <article class="text-justify mx-auto lg:mx-0 w-[96%] text-lg lg:text-[1.25rem] leading-8 mt-8">
             <p>
