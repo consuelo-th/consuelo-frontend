@@ -1,38 +1,58 @@
-import React from 'react';
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import './App.css';
-import Blog from './pages/Blog';
-import Blogs from './pages/AllBlogs';
-import Home from './pages/Home';
-import Landing from './pages/Landing';
-import Layout from './layout/Layout';
-import NoPage from './pages/NoPage';
-import SelfAffirmation from './pages/SelfAffirmation';
-import MentalHealthTips from './pages/MentalHealthTips';
-import Forum from './pages/Forum';
-import Profile from './pages/Profile';
+import getUser from "./services/user";
+import "./App.css";
+import { 
+  Landing,
+  Auth,
+  Layout, 
+  AdminBlog, 
+  AdminBlogs, 
+  AdminHome, 
+  Profile,
+  Community,
+  AdminSelfAffirmation, 
+  FeedbackandReviews, 
+  AdminMentalHealthTips, 
+  BasicHome,
+  BasicBlog,
+  BasicBlogs,
+  BasicSelfAffirmation,
+  BasicMentalHealthTips,
+  NoPage,
+  Logout
+} from "./index";
+import Protected from "./pages/Protected";
 
 function App() {
+  const user = getUser();
+
   
+
   return (
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/dashboard" element={<Layout />} >
-          <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
-          <Route path="self-affirmation" element={<SelfAffirmation />}/>
-          <Route path="mental-health-tips" element={<MentalHealthTips />}/>
-          <Route path="forum" element={<Forum />}/>
-          <Route path="blogs" element={<Blogs />}/>
-          <Route path="blog/:id" element={<Blog />}/>
-          <Route path="community" />
-        </Route>
-        
-        <Route path="/me" element={<Profile />}/>
-        <Route path="*" element={<NoPage />} />
-      </Routes>
-  )
     
+    <Routes>
+      <Route exact path="/" element={<Landing />} />
+      <Route path="/auth" element={<Auth />} />
+        <Route path="/dashboard" element={
+          <Protected>
+            <Layout />
+          </Protected>
+        }>
+          <Route index element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+          <Route path="home" element={user.isAdmin ? <AdminHome /> : <BasicHome />} />
+          <Route path="self-affirmation" element={user.isAdmin ? <AdminSelfAffirmation /> : <BasicSelfAffirmation />} />
+          <Route path="mental-health-tips" element={user.isAdmin ? <AdminMentalHealthTips /> : <BasicMentalHealthTips />} />
+          <Route path="community" element={<Community />} />
+          <Route path="blogs" element={user.isAdmin ? <AdminBlogs /> : <BasicBlogs />} />
+          <Route path="blog/:id" element={user.isAdmin ? <AdminBlog /> : <BasicBlog />} />
+          <Route path="feedbacks" element={<FeedbackandReviews />} />
+        </Route>
+        <Route path="/me" element={<Profile />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<NoPage />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

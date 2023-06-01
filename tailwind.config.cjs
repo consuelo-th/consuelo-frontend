@@ -39,8 +39,14 @@ module.exports = {
         'affirmation-bg': '#E6F6ED',
         'gray-10': '#9B9B9B',
         'gray-300': '#D0D5DD',
-        'error': '#BF5E5E'
+        'error': '#BF5E5E',
+        'card-border': "#E6F6ED"
         
+        
+      },
+      boxShadow:{
+        'custom': `0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1), 
+        0 -5px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1)`
       },
     },
   },

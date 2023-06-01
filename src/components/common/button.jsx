@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ size, variant, children }) => {
+const Button = ({ size, variant, handleClick, children, className}) => {
     const outline = 'border-2 border-primary-50 text-primary-50'
     const light = 'bg-primary-50 text-white'
     const dark = 'bg-primary-70 text-white'
@@ -9,13 +9,13 @@ const Button = ({ size, variant, children }) => {
   if(variant === 'light') {
     if (size === 'lg') {
         return (
-            <button className={`px-24 py-2 ${light}`}>
-            {children}
+            <button className={`px-24 py-2 ${light} ${className}`} onClick={handleClick}>
+                {children}
             </button>
         )
     }
     return (
-        <button className={`px-10 py-2 ${light}`}>
+        <button className={`px-10 py-2 ${light} ${className}`} onClick={handleClick}>
                 {children}
         </button>
     )
@@ -23,14 +23,14 @@ const Button = ({ size, variant, children }) => {
   } else if(variant === 'dark') {
         if(size === 'lg') {
             return (
-                <button className={`px-24 py-2 ${dark}`}>
+                <button className={`px-24 py-2 ${dark} ${className}`} onClick={handleClick}>
                     {children}
                 </button>
             )
         }
         
         return (
-            <button className={`px-10 py-2 ${dark}`}>
+            <button className={`px-10 py-2 ${dark} ${className}`} onClick={handleClick}>
                 {children}
             </button>
         )
@@ -38,14 +38,14 @@ const Button = ({ size, variant, children }) => {
   } else if (variant === 'outline') {
         if (size === 'lg') {
             return (
-                <button className={`px-24 py-2 ${outline}`}>
+                <button className={`px-24 py-2 ${outline} ${className}`} onClick={handleClick}>
                     {children}
                 </button>
             )
         }
 
         return (
-            <button className={`px-10 py-2 ${outline}`}>
+            <button className={`px-10 py-2 ${outline} ${className}`} onClick={handleClick}>
             {children}
             </button>
         )
