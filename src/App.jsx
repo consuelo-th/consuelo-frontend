@@ -23,6 +23,9 @@ import {
   Logout
 } from "./index";
 import Protected from "./pages/Protected";
+import BasicLayout from "./layout/BasicLayout";
+import ABoutUs from "./pages/landingPages/AboutUs";
+import Blog from "./pages/landingPages/Blog";
 
 function App() {
   const user = getUser();
@@ -32,7 +35,11 @@ function App() {
   return (
     
     <Routes>
-      <Route exact path="/" element={<Landing />} />
+      <Route element={<BasicLayout />}>
+        <Route index element={<Landing />} />
+        <Route exact path="about" element={<ABoutUs />} />
+        <Route exact path="blog" element={<Blog />} />
+      </Route>  
       <Route path="/auth" element={<Auth />} />
         <Route path="/dashboard" element={
           <Protected>
